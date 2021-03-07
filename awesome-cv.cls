@@ -161,7 +161,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+\setfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
   Path=\@fontdir,
@@ -621,15 +621,15 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
-    \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
+    \subentrytitlestyle{#2} & \ifempty{#1}
       {\subentrydatestyle{#3}}{}
-    \ifthenelse{\equal{#1}{}}
+    \ifempty{#1}
       {}
       {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
-    \ifthenelse{\equal{#4}{}}
+    \ifempty{#4}
       {}
       {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
-  \end{tabular*}
+  \end{tabular*}%
 }
 
 % Define an environment for cvhonor
