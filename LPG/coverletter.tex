@@ -1,0 +1,248 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for Cover Letter
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, letterpaper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+%% \photo[circle,noedge,left]{./examples/profile}
+\name{Lawrence P.}{Gouger}
+\position{Lead Software Engineer}
+\address{566 Irish Hill Rd., Shelburne, VT, 05482, USA}
+
+\mobile{+1 (310) 989-5684}
+\email{larry.gouger@gmail.com}
+\homepage{www.bunimo.com}
+\github{lgouger}
+\linkedin{lgouger}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+\twitter{@lgouger}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+%% \quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\recipient
+  {Parkside Securities}
+  {San Francisco, CA 94111}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for Lead Full Stack Developer, Server-side(Clojure)}
+% How the letter is opened
+% \letteropening{Dear Mr./Ms./Dr. LastName,}
+\letteropening{To whom it may concern,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+\letterenclosure[Attached]{Resume}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[R]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Lawrence P. Gouger~~~·~~~Cover Letter}
+  {}
+
+% Print the title with above letter informations
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+\lettersection{Why I am Looking}
+I found Parkside Securities's open positions with a search on Indeed
+for Clojure and California.
+
+I currently live near Burlinton, VT and I work for the Dealer.com (DDC)
+organization within Cox Automotive.  It's a great place to work, but I
+hope that I've enjoyed my last Vermont winter.  I moved here in May
+2018 from Southern California and I miss California.  I started
+working for Dealer.com in 2013.  DDC had a small engineering
+presence in Manhattan Beach, and I was hired as one of two Engineering
+Managers.  With only about 15 engineers, I was always in a position to
+pitch in and contribute to coding, testing and support.  When the
+Manhattan Beach office was closed in 2017 I was offered the chance to
+stay on as a remote employee working from CA with a team based in
+Burlington, VT.\@ After a year of remote work, I decided to give
+Vermont a try in hopes on advancement and to work in person with my
+team.  Advancement did come, I moved to VT as a Team member, a Senior
+Engineer and I've now advanced to the role of a Scrum Team Tech Lead,
+though still classified as a Senior Engineer.
+
+So I'm seaching to grow and I'm searching to get back to California.
+Admittedly San Francisco and Manhattan Beach share very little.
+Hearing that Parkside Securities is in a domain I know, FinTech, and
+that you're using technologies that I enjoy like Clojure, make the
+potential for a move appealing.
+
+I've chosen to apply for the ``Lead Full Stack Developer, Server-side
+(Clojure)'' position, but if as you read my cover letter and resume
+you think I might be a better fit in another role, I'm open to the
+possibility.  Also, I should note, that I've received both of my
+COVID-19 vaccination shots.  I look forward to offices reopening, but
+I understand if working remotely is initially required.
+
+\lettersection{FinTech Experience}
+I'm not sure it comes across in my resume, but I bring a great deal of
+knowledge and experience in the Financial/Brokerage world.  I grew up
+with the industry while working for nealy 20 years as an engineer and
+manager at ITG (Investment Technology Group).  Today ITG is part of
+Virtu Financial, though this purchase took place after my time at ITG.
+
+While at ITG, I worked on backend systems like the order routing
+system, which was simply called the Glue.  I also contributed to the
+development of a frontend trading workstation called QuantEX.\@ This
+frontend was hosted on a Sun workstation and over the years used
+technologies like Sun Windows and MOTIF (X Windows).
+
+At ITG, I was most proud to be part of the birth of Algorithmic
+Trading at ITG.\@ Initially we called them Strategy Servers, and I
+wrote the first one developed at ITG, the VWAP Server.  It's goal was
+to trade the shares it was given throughout the trading day in a
+manner that would get as close as possible to the VWAP (Volume
+Weighted Average Price) for the period of the day the orders were
+active.  While I was part of this engineering team, we also developed
+a server we called SPI (Server for Price Improvement) which was
+intended to execute it shares quickly, sitting on the far side of the
+quote and periodically adjusting it's price to be marketable when the
+spread narrowed.  We also wrote a smart OTC router, a server for
+volume participation, and several new generations of VWAP style
+servers.
+
+I'm also proud of my time leading the development of POSIT Now (US)
+and TriACT Canada Marketplace (CA).  They were offshoots of ITG's
+POSIT Automated Trading System.  POSIT is classified as a Dark Pool,
+anonymously matching buyers and sellers at the public market's
+midpoint price.  The idea being that it didn't publish quotes for the
+orders it held, it only published trades as matches were performed
+several times a day.  Typically trading desks and institutional
+traders used POSIT to try to trade illiquid sequrities without the
+risk of moving the market.  POSIT Now operated on the same principle
+but looked for matches more frequently during the day.  Lists of
+securities submitted together played an important role.  List based
+constraints could be put in place to prevent an unwanted imbalance.
+For example, one could limit how much buys could exceed sells and the
+reverse as well.  These constraints were aimed at aiding portfolio
+transitions.
+
+\lettersection{Clojure Interest} I've been developing tools and single
+page web apps in Clojure and Clojurescript for the past 6 years.  I
+attended 2 Clojure Conjs, one in Philadelphia in 2015 and one in
+Durham in 2018. In between those I atttended 2 Clojure West
+conferences in Seattle in 2016 and Portland in 2017.  At these conjs I
+also attended the training that preceeded each conference, Clojure
+training in Philadelphia, clojure.spec in Portland, and a Day of
+Datomic in Durham.
+
+I haven't been able to use Clojure in any of the systems officially
+deployed while at Cox Automotive, but I have developed tools and
+single page web apps to help with the running of our systems.  One
+example is zkget, a command line tool to browse and search ZooKeeper.
+Another was a SPA called adv-assist, to assist in working with
+Facebook pages and our Advertising acounts.
+
+Most recently I've been playing with Cognitect's AWS library.  Writing
+tools to monitor Lambda functions, S3 buckets, and SQS queues.
+
+To summarize my proficiencey in Clojure, I'm capable of solving
+problems in Clojure, but I've always worked on Clojure projects on my
+own.  I look forward to working with others to see how they solve
+problems and share the techniques I've used.  In specific areas like
+core.async or datomic, I've dabbled, but I haven't done anything
+meaty. 
+
+\lettersection{Tech Experience}
+My current team is focused on OEM incentives applied to vehicles sold
+by our Automotive dealership customers.  We are in a transition from
+on-prem Java Spring apps hosted by Tomcat to Containerized deployments
+using the AWS Elastice Container Service (ECS).  As the Scrum team's
+Tech Lead, I'm investigating EKS (AWS hosted K8s), GitOps using tools
+like ArgoCD, and Github Actions to build the Docker images to be
+deployed.
+
+The team has also been building serverless apps as well, AWS Lambdas and Step Functions.
+
+\lettersection{In Closing}
+
+Thank you for your consideration.  I hope to have the opportunity to
+tell you more about who I am and what I can bring to Parkside
+Securities.
+
+\end{cvletter}
+
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
+\end{document}
