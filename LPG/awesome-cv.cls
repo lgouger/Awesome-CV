@@ -584,7 +584,6 @@
   \paragraphstyle
 }{%
   \par
-  \vspace{2mm}
 }
 
 % Define an environment for cventry
@@ -600,10 +599,12 @@
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \whennotempty{#2#3}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\}
-    \whennotempty{#1#4}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth -4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {}
+      {\vspace{-3mm}\entrytitlestyle{#2} & \vspace{-3mm}\entrylocationstyle{#3} \\}
+    \ifempty{#4}
+      {\entrypositionstyle{#1} \\}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
@@ -620,7 +621,7 @@
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth -4.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#2} & \ifempty{#1}
       {\subentrydatestyle{#3}}{}
@@ -631,6 +632,7 @@
       {}
       {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
   \end{tabular*}%
+  \vspace{-1mm}
 }
 
 % Define an environment for cvhonor
