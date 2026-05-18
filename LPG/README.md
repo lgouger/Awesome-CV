@@ -13,17 +13,47 @@ Run twice to resolve cross-references.
 
 ## Required Fonts
 
-The build requires **FontAwesome** and **Roboto** fonts in a `fonts/` directory
-at the repo root (i.e., `../fonts/` relative to this directory). This directory
-is not tracked in source control.
+The build requires three font families:
 
-### Option 1: TeX Live (recommended)
+- **Source Sans 3** (main document font)
+- **FontAwesome** (icons)
+- **Roboto** (specific sections)
 
-If you have [TeX Live](https://www.tug.org/texlive/) installed, the fonts are
-already bundled. Create symlinks from the repo root:
+### Installing Source Sans 3 (Required)
+
+Source Sans 3 is **not** included in TeX Live (only the older Source Sans Pro is).
+You must install it system-wide:
 
 ```bash
-# From the repo root
+# Download Source Sans 3 static fonts from Adobe
+curl -L -o /tmp/source-sans-3.zip https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip
+
+# Extract and install to user fonts directory
+cd /tmp
+unzip -q source-sans-3.zip
+cp OTF/*.otf ~/Library/Fonts/  # macOS
+# or: cp OTF/*.otf ~/.local/share/fonts/  # Linux
+
+# Refresh font cache (Linux only)
+fc-cache -f ~/.local/share/fonts
+
+# Verify installation
+fc-list | grep "Source Sans 3"
+```
+
+**Important:** Install the **static OTF files**, not the variable TTF fonts.
+XeLaTeX does not work properly with variable fonts.
+
+### Installing FontAwesome and Roboto
+
+These fonts also need to be in a `fonts/` directory within this LPG directory.
+
+#### Option 1: TeX Live symlinks (recommended if you have TeX Live)
+
+If you have [TeX Live](https://www.tug.org/texlive/) installed:
+
+```bash
+# From the LPG directory
 mkdir -p fonts
 
 # FontAwesome
@@ -40,9 +70,9 @@ done
 
 Adjust the `TEXLIVE` path if your installation year differs (e.g., `2024`).
 
-### Option 2: Download directly
+#### Option 2: Download directly
 
-Download the fonts and place them in a `fonts/` directory at the repo root:
+Download and place in the `fonts/` directory:
 
 - **FontAwesome 4.7** — [FontAwesome.otf](https://github.com/FortAwesome/Font-Awesome/releases/tag/v4.7.0)
   (download the zip, extract `fonts/FontAwesome.otf`)
