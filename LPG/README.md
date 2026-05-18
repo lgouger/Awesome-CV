@@ -63,7 +63,8 @@ ln -s $TEXLIVE/texmf-dist/fonts/opentype/public/fontawesome/FontAwesome.otf font
 # Roboto
 ROBOTO=$TEXLIVE/texmf-dist/fonts/opentype/google/roboto
 for f in Roboto-Regular Roboto-Italic Roboto-Bold Roboto-BoldItalic \
-          Roboto-Thin Roboto-ThinItalic Roboto-Medium Roboto-MediumItalic; do
+          Roboto-Thin Roboto-ThinItalic Roboto-Medium Roboto-MediumItalic \
+          Roboto-Light Roboto-LightItalic; do
   ln -s $ROBOTO/$f.otf fonts/
 done
 ```
@@ -78,6 +79,6 @@ Download and place in the `fonts/` directory:
   (download the zip, extract `fonts/FontAwesome.otf`)
 - **Roboto** — [Google Fonts](https://fonts.google.com/specimen/Roboto)
   (download the family, you need: Regular, Italic, Bold, Bold Italic, Thin,
-  Thin Italic, Medium, Medium Italic)
+  Thin Italic, Medium, Medium Italic, Light, Light Italic)
 
 Rename the Roboto files to match the pattern `Roboto-<Weight>.otf` if needed.

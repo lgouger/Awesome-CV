@@ -98,12 +98,14 @@
   FontFace={l}{it}{Font=* Light Italic},
 ]
 \newfontfamily\roboto{Roboto}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
+  Path=fonts/,
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+  FontFace={l}{n}{Font=*-Light},
+  FontFace={l}{it}{Font=*-LightItalic},
 ]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
