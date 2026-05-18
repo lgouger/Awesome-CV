@@ -82,20 +82,26 @@
   Renderer=HarfBuzz,
 }
 \setmainfont{Source Sans 3}[
+  Renderer=OpenType,
   UprightFont=*,
   ItalicFont=* Italic,
   BoldFont=* Bold,
   BoldItalicFont=* Bold Italic,
   FontFace={l}{n}{Font=* Light},
   FontFace={l}{it}{Font=* Light Italic},
+  FontFace={bx}{n}{Font=* Black},
+  SmallCapsFeatures={Letters=UppercaseSmallCaps},
 ]
 \setsansfont{Source Sans 3}[
+  Renderer=OpenType,
   UprightFont=*,
   ItalicFont=* Italic,
   BoldFont=* Bold,
   BoldItalicFont=* Bold Italic,
   FontFace={l}{n}{Font=* Light},
   FontFace={l}{it}{Font=* Light Italic},
+  FontFace={bx}{n}{Font=* Black},
+  SmallCapsFeatures={Letters=UppercaseSmallCaps},
 ]
 \newfontfamily\roboto{Roboto}[
   Path=fonts/,
@@ -191,6 +197,7 @@
 \newcommand*{\footerfont}{\sffamily}
 \newcommand*{\bodyfont}{\sffamily}
 \newcommand*{\bodyfontlight}{\sffamily\fontseries{l}\selectfont}
+\newcommand*{\bodyfontblack}{\sffamily\fontseries{bx}\selectfont}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
@@ -208,10 +215,17 @@
 \newcommand*{\sectionstyle}[1]{%
   \def\@acvSectionTmp{#1}
   \ifthenelse{\boolean{acvSectionColorHighlight}}{%
-    \StrSplit{\@acvSectionTmp}{3}{\acvSectionStringAwesome}{\acvSectionStringPlain}%
-      \color{awesome}\sectionstyleface{\acvSectionStringAwesome%
-      \color{text}{\acvSectionStringPlain}}}%
-      {\color{text}\sectionstyleface{\@acvSectionTmp}}}
+    \StrCount{\@acvSectionTmp}{ }[\acvSectionSpaceCount]%
+    \ifthenelse{\equal{\acvSectionSpaceCount}{0}}{%
+      {\fontsize{16pt}{1em}\bodyfontblack\color{awesome}\@acvSectionTmp}%
+    }{%
+      \StrBefore{\@acvSectionTmp}{ }[\acvSectionFirstWord]%
+      \StrBehind{\@acvSectionTmp}{ }[\acvSectionRestWords]%
+      {\fontsize{16pt}{1em}\bodyfontblack\color{awesome}\acvSectionFirstWord}%
+      {\fontsize{16pt}{1em}\bodyfont\color{text}\ \acvSectionRestWords}%
+    }%
+  }%
+  {\color{text}\sectionstyleface{\@acvSectionTmp}}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
